@@ -24,7 +24,7 @@ class AuthService {
       `)
       .eq('username', credentials.username)
       .eq('is_active', true)
-      .single();
+      .maybeSingle();
 
     if (error || !data) {
       throw new Error('Invalid username or password');
